@@ -23,6 +23,14 @@ jobs:
       - name: Build and test with Maven
         run: mvn clean verify --file ./simple-api/pom.xml
 
+      - name: SonarCloud Analysis
+        run: mvn -B verify sonar:sonar \
+          -Dsonar.projectKey=tp-devops-github-action \
+          -Dsonar.organization=rihemboutemine \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+          --file ./simple-api/pom.xml
+
   build-and-push-docker-image:
     needs: test-backend
     if: github.ref == 'refs/heads/main'
