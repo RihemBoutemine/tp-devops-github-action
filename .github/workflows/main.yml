@@ -25,7 +25,8 @@ jobs:
 
       - name: SonarCloud Analysis
         working-directory: ./simple-api
-        run: mvn -B verify sonar:sonar \
+        run: |
+          mvn -B verify sonar:sonar \
           -Dsonar.projectKey=tp-devops-github-action \
           -Dsonar.organization=rihemboutemine \
           -Dsonar.host.url=https://sonarcloud.io \
