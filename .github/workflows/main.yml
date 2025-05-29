@@ -27,7 +27,7 @@ jobs:
         working-directory: ./simple-api
         run: |
           mvn -B verify sonar:sonar \
-          -Dsonar.projectKey=rihemboutemine_tp-devops-github-action
+          -Dsonar.projectKey=RihemBoutemine_tp-devops-github-action \
           -Dsonar.organization=rihemboutemine \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
