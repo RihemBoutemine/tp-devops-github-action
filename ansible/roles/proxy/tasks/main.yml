@@ -1,0 +1,11 @@
+- name: Launch HTTPD reverse proxy
+  docker_container:
+    name: proxy
+    image: rihem2002/tp-devops-httpd
+    ports:
+      - "80:80"
+    networks:
+      - name: app_network
+
+  vars:
+    ansible_python_interpreter: /opt/docker_venv/bin/python

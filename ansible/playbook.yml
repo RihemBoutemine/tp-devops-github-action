@@ -1,0 +1,13 @@
+- hosts: all
+  become: true
+  gather_facts: true
+
+  vars:
+    database_host: database
+    database_name: db
+    database_user: usr
+    database_password: pwd
+
+
+  roles:
+    - docker

@@ -1,0 +1,14 @@
+---
+# tasks file for ansible/roles/database
+- name: Launch PostgreSQL container
+  docker_container:
+    name: database
+    image: rihem2002/tp-devops-db
+    env:
+      POSTGRES_USER: usr
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: db
+    networks:
+      - name: app_network
+  vars:
+      ansible_python_interpreter: /opt/docker_venv/bin/python
