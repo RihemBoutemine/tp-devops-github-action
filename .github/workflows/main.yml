@@ -65,7 +65,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
           push: true
   deploy:
-    needs: build-docker-images
+    needs: build-and-push-docker-image
     runs-on: ubuntu-latest
 
     steps:
