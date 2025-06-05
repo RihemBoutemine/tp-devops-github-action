@@ -4,6 +4,7 @@
   docker_container:
     name: simple-api
     image: rihem2002/tp-devops-simple-api
+    pull: yes
 
     env:
       DATABASE_HOST: "{{ database_host }}"
